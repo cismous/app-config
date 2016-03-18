@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export ANDROID_HOME=/media/cis/Data/Apps/android-sdk-linux
+export ANDROID_HOME=$HOME/Apps/android-sdk-linux
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # brew
@@ -8,17 +8,21 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
-# androida alias
+# go
+export GOPATH="$HOME/go"
+export PATH=$PATH:/usr/local/go/bin
+
+# android alias
 alias devices='adb devices'
 
-# ionic
-alias ion='ionic'
-alias run='ionic run'
-alias build='ionic build'
-#alias lx='python ~/Apps/lixian/lixian_cli.py'
+# meteor
+export PACKAGE_DIRS=~/.meteor_local_packages
 
 # nodejs
 export NODE_ENV='development'
+
+# npm prefix config
+export PATH=$HOME/.local/bin:$PATH
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -33,7 +37,7 @@ ZSH_THEME="aussiegeek"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=180
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -69,6 +73,7 @@ alias sudo='sudo '
 alias hosts='sudo vi /etc/hosts'
 alias chosts='cat /etc/hosts'
 alias zshrc='vi ~/.zshrc'
+alias vimrc='vi ~/.vimrc'
 alias bashrc='vi ~/.bashrc'
 alias nh='nautilus .'
 alias lsppa='ls /etc/apt/sources.list.d/ | grep --color=never "list$"'
@@ -79,10 +84,7 @@ alias ss='ss-local -c ~/Apps/shadowsocks-libev/config'
 alias ss-us='ss-local -c ~/Apps/shadowsocks-libev/config-us'
 alias ss-ali='ss-local -c ~/Apps/shadowsocks-libev/config-ali'
 alias genymotion='~/Apps/genymotion/genymotion'
-
-# User configuration
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+alias qshell='~/Apps/qshell-v1.7.0/qshell_linux_amd64'
 
 source $ZSH/oh-my-zsh.sh
 
