@@ -1,16 +1,30 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export ANDROID_HOME=$HOME/Apps/android-sdk-linux
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
+#export PATH=${PATH}:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
+#export ANDROID_HOME=$HOME/Apps/android-sdk-linux
+export ANDROID_HOME=/usr/local/Cellar/android-sdk/24.4.1_1
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
+
+# yarn
+export PATH="$HOME/.yarn/bin:$PATH"
 
 # brew
 export PATH="$HOME/.linuxbrew/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
+# mysql
+export MYSQL_PATH=/usr/local/Cellar/mysql/5.6.27  
+export PATH=$PATH:$MYSQL_PATH/bin
+
 # go
-export GOPATH="$HOME/go"
-export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/Apps/Go
+export PATH=$PATH:$HOME/Apps/Go/bin
 
 # android alias
 alias devices='adb devices'
@@ -18,10 +32,8 @@ alias devices='adb devices'
 # meteor
 export PACKAGE_DIRS=~/.meteor_local_packages
 
-# nodejs
+# nodejs & npm prefix config
 export NODE_ENV='development'
-
-# npm prefix config
 export PATH=$HOME/.local/bin:$PATH
 
 # Set name of the theme to load.
@@ -35,9 +47,6 @@ ZSH_THEME="aussiegeek"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=180
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -65,7 +74,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z colored-man sudo wd history history-substring-search command-not-found)
+plugins=(brew autojump git z colored-man sudo wd history history-substring-search command-not-found encode64)
 
 # Customize
 # alias
@@ -75,14 +84,9 @@ alias chosts='cat /etc/hosts'
 alias zshrc='vi ~/.zshrc'
 alias vimrc='vi ~/.vimrc'
 alias bashrc='vi ~/.bashrc'
-alias nh='nautilus .'
 alias lsppa='ls /etc/apt/sources.list.d/ | grep --color=never "list$"'
-alias open='xdg-open'
 alias proxy=proxychains4 -f "/etc/proxychains.conf"
 alias down='aria2c --conf-path=${HOME}/.aria2/aria2.conf'
-alias ss='ss-local -c ~/Apps/shadowsocks-libev/config'
-alias ss-us='ss-local -c ~/Apps/shadowsocks-libev/config-us'
-alias ss-ali='ss-local -c ~/Apps/shadowsocks-libev/config-ali'
 alias genymotion='~/Apps/genymotion/genymotion'
 alias qshell='~/Apps/qshell-v1.7.0/qshell_linux_amd64'
 
@@ -97,3 +101,9 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+
+#alias for cnpm
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npm.taobao.org/dist \
+  --userconfig=$HOME/.cnpmrc"
