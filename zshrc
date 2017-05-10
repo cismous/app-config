@@ -1,13 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
-#export PATH=${PATH}:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
-#export ANDROID_HOME=$HOME/Apps/android-sdk-linux
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
 export ANDROID_HOME=/usr/local/Cellar/android-sdk/24.4.1_1
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=/Users/mous/Apps/dev/apache-maven-3.3.9/bin:${PATH}:$ANDROID_HOME/build-tools/25.0.2:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export GEM_HOME=$HOME/.gem
-export PATH=$GEM_HOME/bin:$PATH
+export PATH="$GEM_HOME/bin:$PATH"
 
 # yarn
 export PATH="$HOME/.yarn/bin:$PATH"
@@ -48,22 +45,11 @@ ZSH_THEME="aussiegeek"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -72,8 +58,6 @@ HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(brew autojump git z colored-man sudo wd history history-substring-search command-not-found encode64)
 
 # Customize
@@ -88,22 +72,6 @@ alias lsppa='ls /etc/apt/sources.list.d/ | grep --color=never "list$"'
 alias proxy=proxychains4 -f "/etc/proxychains.conf"
 alias down='aria2c --conf-path=${HOME}/.aria2/aria2.conf'
 alias genymotion='~/Apps/genymotion/genymotion'
-alias qshell='~/Apps/qshell-v1.7.0/qshell_linux_amd64'
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-#alias for cnpm
-alias cnpm="npm --registry=https://registry.npm.taobao.org \
-  --cache=$HOME/.npm/.cache/cnpm \
-  --disturl=https://npm.taobao.org/dist \
-  --userconfig=$HOME/.cnpmrc"
