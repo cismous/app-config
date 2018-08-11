@@ -1,23 +1,33 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
-export ANDROID_HOME=/usr/local/Cellar/android-sdk/24.4.1_1
-export PATH=/Users/mous/Apps/dev/apache-maven-3.3.9/bin:${PATH}:$ANDROID_HOME/build-tools/25.0.2:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export GEM_HOME=$HOME/.gem
 export PATH="$GEM_HOME/bin:$PATH"
+
+# Homebrew-bottles 镜像
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+
+# android
+export ANDROID_SDK_ROOT=/usr/local/share/android-sdk/
+export ANDROID_NDK_HOME=/usr/local/share/android-ndk/
+export ANDROID_HOME=$ANDROID_SDK_ROOT
+export PATH=${ANDROID_HOME}tools:${ANDROID_HOME}tools/bin:${ANDROID_HOME}platform-tools:${PATH}
+
+# flutter
+export PATH="$HOME/Apps/flutter/bin:$PATH"
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 # yarn
 export PATH="$HOME/.yarn/bin:$PATH"
 
 # brew
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+#export PATH="$HOME/.linuxbrew/bin:$PATH"
+#export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+#export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 # mysql
-export MYSQL_PATH=/usr/local/Cellar/mysql/5.6.27  
-export PATH=$PATH:$MYSQL_PATH/bin
+#export MYSQL_PATH=/usr/local/Cellar/mysql/5.6.27  
+#export PATH=$PATH:$MYSQL_PATH/bin
 
 # go
 export GOPATH=$HOME/Apps/Go
@@ -25,9 +35,6 @@ export PATH=$PATH:$HOME/Apps/Go/bin
 
 # android alias
 alias devices='adb devices'
-
-# meteor
-export PACKAGE_DIRS=~/.meteor_local_packages
 
 # nodejs & npm prefix config
 export NODE_ENV='development'
@@ -56,9 +63,13 @@ DISABLE_AUTO_UPDATE="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="mm/dd/yyyy"
 
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(brew autojump git z colored-man sudo wd history history-substring-search command-not-found encode64)
+plugins=(brew autojump web-search zsh-autosuggestions
+ git z colored-man sudo wd history history-substring-search command-not-found encode64)
 
 # Customize
 # alias
@@ -71,7 +82,11 @@ alias bashrc='vi ~/.bashrc'
 alias lsppa='ls /etc/apt/sources.list.d/ | grep --color=never "list$"'
 alias proxy=proxychains4 -f "/etc/proxychains.conf"
 alias down='aria2c --conf-path=${HOME}/.aria2/aria2.conf'
-alias genymotion='~/Apps/genymotion/genymotion'
+alias codec='code .'
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 source $ZSH/oh-my-zsh.sh
 
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
