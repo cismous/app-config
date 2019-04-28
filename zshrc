@@ -3,6 +3,9 @@ export ZSH=$HOME/.oh-my-zsh
 export GEM_HOME=$HOME/.gem
 export PATH="$GEM_HOME/bin:$PATH"
 
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+
 # Homebrew-bottles 镜像
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
@@ -17,8 +20,8 @@ export PATH="$HOME/Apps/flutter/bin:$PATH"
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
-# yarn
-export PATH="$HOME/.yarn/bin:$PATH"
+# python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # brew
 #export PATH="$HOME/.linuxbrew/bin:$PATH"
@@ -35,6 +38,9 @@ export PATH=$PATH:$HOME/Apps/Go/bin
 
 # android alias
 alias devices='adb devices'
+
+# yarn
+export PATH="$HOME/.yarn/bin:$PATH"
 
 # nodejs & npm prefix config
 export NODE_ENV='development'
