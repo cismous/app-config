@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh installation.
+export LC_CTYPE=en_US.UTF-8
 export ZSH=$HOME/.oh-my-zsh
 export GEM_HOME=$HOME/.gem
 export PATH="$GEM_HOME/bin:$PATH"
@@ -14,6 +15,7 @@ export ANDROID_SDK_ROOT=/usr/local/share/android-sdk/
 export ANDROID_NDK_HOME=/usr/local/share/android-ndk/
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 export PATH=${ANDROID_HOME}tools:${ANDROID_HOME}tools/bin:${ANDROID_HOME}platform-tools:${PATH}
+export PATH=$ANDROID_HOME/build-tools/28.0.2:$PATH
 
 # flutter
 export PATH="$HOME/Apps/flutter/bin:$PATH"
@@ -29,7 +31,7 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 #export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 # mysql
-#export MYSQL_PATH=/usr/local/Cellar/mysql/5.6.27  
+#export MYSQL_PATH=/usr/local/Cellar/mysql/5.6.27
 #export PATH=$PATH:$MYSQL_PATH/bin
 
 # go
